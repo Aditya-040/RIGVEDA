@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+
+            background-image: url('https://wallpaperaccess.com/full/654501.jpg');
+            
+          
+             background-repeat: no-repeat;
+            background-size:100% ;
+        }
+
+        main {
+            margin-top: 200px;
+            font-size: 40px;
+            margin-left: 650px;
+            
+        }
+
+        header {
+            font-size: 20px;
+            text-decoration: none;
+            border-style: double;
+            word-spacing: 15px;
+        }
+        #cl{
+            width: 500px;
+        }
+
+        .c {
+            margin-left: 20px;
+            font-size: 20px;
+            height: 40px;
+            width: 200px;
+            color: brown;
+            border-radius: 20px;
+            background-color: rgb(238, 221, 158);
+
+        }
+        .d {
+            margin-left: 20px;
+            font-size: 25px;
+            height: 40px;
+            width: 200px;
+            color: brown;
+            border-radius: 10px;
+            background-color: rgb(238, 221, 158);
+
+        }
+        #ca{
+            background-color: rgb(255, 115, 0);
+        }
+        #pro{
+            color: rgb(18, 3, 3);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="">Profile</a>
+        <a href="">BMIcalculator</a>
+        <a href=""></a>
+    </header>
+    <main>
+        <form method='post'>
+            {%csrf_token%}
+            <h1 id="pro">Stay fit with Rigveda</h1>
+            <input class="d" id="cl" type='text' placeholder='Search For Problem' name='yogasearch'>
+            <input class="c" id="ca" type='submit' value='search'>
+
+        </form>
+    </main>
+</body>
+
+</html>
