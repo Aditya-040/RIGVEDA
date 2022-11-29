@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Yoga(models.Model):
     name = models.CharField(max_length=300)
-    picture = models.ImageField(upload_to='static')
+    picture = models.ImageField(upload_to='yogaimg')
     problem = models.CharField(max_length=500)
     
     description = models.TextField()
