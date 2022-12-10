@@ -17,6 +17,7 @@ class userinfo(models.Model):
     password=models.CharField(max_length=16)
     problem=models.CharField(max_length=50)
     
+    
     def __str__(self):
         return self.username
     
