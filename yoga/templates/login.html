@@ -1,191 +1,251 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      border-style: solid;
-      margin: 20%;
+  <meta charset="UTF-8">
+  <title>Login Page </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 
-    }
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
 
-    * {
-      box-sizing: border-box;
-    }
-
-    /* style the container */
-    .container {
-      position: relative;
-      border-radius: 5px;
-      background-color: #f2f2f2;
-      padding: 20px 0 30px 0;
-
-      padding: 176px;
-    }
-
-    /* style inputs and link buttons */
-    input,
-    .btn {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 4px;
-      margin: 5px 0;
-      opacity: 0.85;
-      display: inline-block;
-      font-size: 17px;
-      line-height: 20px;
-      text-decoration: none;
-      /* remove underline from anchors */
-    }
-
-    input:hover,
-    .btn:hover {
-      opacity: 1;
-    }
-
-    /* add appropriate colors to fb, twitter and google buttons */
-    .fb {
-      background-color: #3B5998;
-      color: white;
-    }
-
-    .twitter {
-      background-color: #55ACEE;
-      color: white;
-    }
-
-    .google {
-      background-color: #dd4b39;
-      color: white;
-    }
-
-    /* style the submit button */
-    input[type=submit] {
-      background-color: #ff4800;
-      color: white;
-      cursor: pointer;
-    }
-
-    input[type=submit]:hover {
-      background-color: #a09d45;
-    }
-
-    /* Two-column layout 
-.col {
-  float: left;
-  width: 50%;
-  margin: auto;
-  padding: 0 50px;
-  margin-top: 6px;
-}
-*/
-
-    /* Clear floats after the columns */
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    /* vertical line */
-    .vl {
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%);
-      border: 2px solid #ddd;
-      height: 160px;
-    }
-
-    /* text inside the vertical line */
-    .vl-innertext {
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #f1f1f1;
-      border: 1px solid #ccc;
-      border-radius: 50%;
-      padding: 8px 10px;
-    }
-
-    /* hide some text on medium and large screens */
-    .hide-md-lg {
-      display: none;
-    }
-
-    /* bottom container */
-    .bottom-container {
-      text-align: center;
-      background-color: #666;
-      border-radius: 0px 0px 4px 4px;
-    }
-
-    /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 650px) {
-      .col {
-        width: 100%;
-        margin-top: 0;
-      }
-
-      /* hide the vertical line */
-      .vl {
-        display: none;
-      }
-
-      /* show the hidden text on small screens */
-      .hide-md-lg {
-        display: block;
-        text-align: center;
-      }
-
-      .rig {
-        padding-left: 5px;
-        color: #a09d45;
-        background-color: #dd4b39;
-      }
-    }
-  </style>
 </head>
+<style>
+  body {
+    background-image: linear-gradient(135deg, #ffff99 10%, #ff6600 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Open Sans", sans-serif;
+    color: #333333;
+  }
+
+  .box-form {
+    margin: 0 auto;
+    width: 80%;
+    background: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex: 1 1 100%;
+    align-items: stretch;
+    justify-content: space-between;
+    box-shadow: 0 0 20px 6px #090b6f85;
+  }
+
+  @media (max-width: 980px) {
+    .box-form {
+      flex-flow: wrap;
+      text-align: center;
+      align-content: center;
+      align-items: center;
+    }
+  }
+
+  .box-form div {
+    height: auto;
+  }
+
+  .box-form .left {
+    color: #FFFFFF;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://wallpapercave.com/wp/wp472348.png");
+    overflow: hidden;
+  }
+
+  .box-form .left .overlay {
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .box-form .left .overlay h1 {
+    font-size: 10vmax;
+    line-height: 1;
+    font-weight: 900;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .box-form .left .overlay span p {
+    margin-top: 30px;
+    font-weight: 900;
+  }
+
+  .box-form .left .overlay span a {
+    background: #3b5998;
+    color: #FFFFFF;
+    margin-top: 10px;
+    padding: 14px 50px;
+    border-radius: 100px;
+    display: inline-block;
+    box-shadow: 0 3px 6px 1px #042d4657;
+  }
+
+  .box-form .left .overlay span a:last-child {
+    background: #1dcaff;
+    margin-left: 30px;
+  }
+
+  .box-form .right {
+    padding: 40px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 980px) {
+    .box-form .right {
+      width: 100%;
+    }
+  }
+
+  .box-form .right h5 {
+    font-size: 6vmax;
+    line-height: 0;
+  }
+
+  .box-form .right p {
+    font-size: 14px;
+    color: #B0B3B9;
+  }
+
+  .box-form .right .inputs {
+    overflow: hidden;
+  }
+
+  .box-form .right input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 25px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #B0B3B9;
+  }
+
+  .box-form .right .remember-me--forget-password {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .box-form .right .remember-me--forget-password input {
+    margin: 0;
+    margin-right: 7px;
+    width: auto;
+  }
+
+  .box-form .right button {
+    float: right;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 35px;
+    border-radius: 50px;
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    box-shadow: 0px 4px 20px 0px #49c628a6;
+    background-image: linear-gradient(135deg, #70F570 10%, #49C628 100%);
+  }
+
+  label {
+    display: block;
+    position: relative;
+    margin-left: 30px;
+  }
+
+  label::before {
+    content: ' \f00c';
+    position: absolute;
+    font-family: FontAwesome;
+    background: transparent;
+    border: 3px solid #70F570;
+    border-radius: 4px;
+    color: transparent;
+    left: -30px;
+    transition: all 0.2s linear;
+  }
+
+  label:hover::before {
+    font-family: FontAwesome;
+    content: ' \f00c';
+    color: #fff;
+    cursor: pointer;
+    background: #70F570;
+  }
+
+  label:hover::before .text-checkbox {
+    background: #70F570;
+  }
+
+  label span.text-checkbox {
+    display: inline-block;
+    height: auto;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s linear;
+  }
+
+  label input[type="checkbox"] {
+    display: none;
+  }
+
+
+  input[type=submit] {
+    background-color: #00ff6a;
+    color: white;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #a09d45;
+  }
+</style>
+
+
 
 <body>
-  <div class="rig">
-    <h1>Welcome to rigveda</<h1>
-  </div>
-  <div class="container">
-    <form action="" method="post">
-      {% csrf_token %}
-      <div class="row">
-        <h2 style="text-align:center">Login To Rigveda</h2>
 
+  <div class="box-form">
+    <div class="left">
+      <div class="overlay">
+        <h1>Rigveda</h1><br>
+        <p>ONE STEP TOWARD YOUR HEALTH</p><br>
+        <P>Good health is not something we can buy. However, it can be an extremely valuable savings account</P>
 
-        <div class="col">
-          <div class="hide-md-lg">
-            <p>Or sign in manually:</p>
-          </div>
-
-          <input type="text" name="username" placeholder="Username" required>
-          <input type="password" name="password" placeholder="Password" required>
-          <input type="submit" value="Login">
-        </div>
-
-      </div>
-    </form>
-  </div>
-
-  <div class="bottom-container">
-    <div class="row">
-      <div class="col">
-        <a href="http://127.0.0.1:8000/signup/" style="color:white" class="btn">Sign up</a>
-      </div>
-      <div class="col">
-        <a href="#" style="color:white" class="btn">Forgot password?</a>
       </div>
     </div>
-  </div>
+
+    <div class="right">
+
+      <div class="right">
+        <h5>Login</h5>
+
+        <p>Don't have an account? <a href="http://127.0.0.1:8000/signup/">sign up</a> it takes less than a minute</p>
+        <form method="post">
+          {% csrf_token %}
+          <div class="inputs">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+          </div>
+        </form>
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+
 
 </body>
 
