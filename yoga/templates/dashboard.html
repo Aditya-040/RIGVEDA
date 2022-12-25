@@ -3,21 +3,22 @@
 
 <head>
     <title>Dashboard</title>
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <style>
         body {
 
             background-image: url('https://wallpaperaccess.com/full/654501.jpg');
-            
-          
-             background-repeat: no-repeat;
-            background-size:100% ;
+
+
+            background-repeat: no-repeat;
+            background-size: 100%;
         }
 
         main {
             margin-top: 230px;
             font-size: 40px;
             margin-left: 650px;
-            
+
         }
 
         header {
@@ -26,8 +27,9 @@
             border-style: double;
             word-spacing: 15px;
         }
-        #cl{
-            
+
+        #tags {
+
             width: 500px;
         }
 
@@ -43,6 +45,7 @@
             padding-right: 20px;
 
         }
+
         .d {
             margin-left: 20px;
             font-size: 25px;
@@ -53,13 +56,52 @@
             background-color: rgb(238, 221, 158);
 
         }
-        #ca{
+
+        #ca {
             background-color: rgb(255, 115, 0);
         }
-        #pro{
+
+        #pro {
             color: rgb(18, 3, 3);
         }
     </style>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            var availableTags = [
+                "headache,cold,cough,fever",
+                "fever,cold,cough,chestpain,bodypain,headache",
+                "ActionScript",
+                "AppleScript",
+                "Asp",
+                "BASIC",
+                "C",
+                "C++",
+                "Clojure",
+                "COBOL",
+                "ColdFusion",
+                "Erlang",
+                "Fortran",
+                "Groovy",
+                "Haskell",
+                "Java",
+                "JavaScript",
+                "Lisp",
+                "Perl",
+                "PHP",
+                "Python",
+                "Ruby",
+                "Scala",
+                "Scheme"
+            ];
+            $("#tags").autocomplete({
+                source: availableTags
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -72,11 +114,13 @@
         <form method='post' enctype="multipart/form-data">
             {%csrf_token%}
             <h1 id="pro">Stay fit with Rigveda</h1>
-            <input class="d" id="cl" type='text' placeholder='Search For Problem' name='yogasearch'>
+            <input class="d" id="tags" type='text' placeholder='Search For Problem' name='yogasearch'>
             <input class="c" id="ca" type='submit' value='search'>
 
         </form>
     </main>
+
+
 </body>
 
 </html>
